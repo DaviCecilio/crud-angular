@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Caneta BIC Preta",
+      "price": 5.89
+    },
+    {
+      "id": 2,
+      "name": "Notebook Mac Pro",
+      "price": 12000
+    },
+    {
+      "id": 3,
+      "name": "Capacete Peels",
+      "price": 345.5
+    },
+    {
+      "id": 4,
+      "name": "Luva preta",
+      "price": 99.89
+    },
+    {
+      "name": "Computador Gamer",
+      "price": 4568.66,
+      "id": 5
+    },
+    {
+      "name": "Outro produto",
+      "price": 4568.66,
+      "id": 6
+    }
+  ]
+}
