@@ -3,7 +3,7 @@
     {
       "id": 3,
       "name": "Capacete Peels",
-      "price": 345.5
+      "price": "345.50"
     },
     {
       "product": {

@@ -1,4 +1,6 @@
-import { Observable } from 'rxjs'
+import { EMPTY, Observable } from 'rxjs'
+import { map, catchError } from 'rxjs/operators'
+
 import { Injectable } from '@angular/core'
 import { Router } from '@angular/router'
 
@@ -21,11 +23,12 @@ export class ProductService {
     private router: Router
   ) { }
 
-  showMessage(message: string): void {
+  showMessage(message: string, isError?: boolean): void {
     this.snackBar.open(message, 'OK!', {
       duration: 3000,
       horizontalPosition: "right",
-      verticalPosition: "top"
+      verticalPosition: "top",
+      panelClass: isError ? ["message-danger"] : ["message-success"]
     })
   }
 
@@ -33,8 +36,16 @@ export class ProductService {
     this.router.navigate(["/products"])
   }
 
+  errorHandler(e: any): Observable<any> {
+    this.showMessage('Ocorreu um erro inesperado!', true)
+    return EMPTY
+  }
+
   createProduct(product: CreateProductService): Observable<Product> {
-    return this.http.post<Product>(this.baseUrl, product)
+    return this.http.post<Product>(this.baseUrl, product).pipe(
+      map(item => item),
+      catchError(e => this.errorHandler(e))
+    )
   }
 
   getProducts(): Observable<Product[]> {

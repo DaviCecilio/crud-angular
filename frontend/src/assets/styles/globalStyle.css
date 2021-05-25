@@ -4,9 +4,19 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
 .v-middle {
   vertical-align: middle;
+}
+
+.message-success {
+  background-color: #75cb5b;
+  color: #ffffff;
+}
+
+.message-danger {
+  background-color: #cb5b5b;
+  color: #ffffff;
 }
