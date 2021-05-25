@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core'
+
 import { BrowserModule } from '@angular/platform-browser'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
 import { MatSidenavModule } from "@angular/material/sidenav"
 import { MatCardModule } from "@angular/material/card"
 import { MatListModule } from "@angular/material/list"
 import { MatToolbarModule } from '@angular/material/toolbar'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatButtonModule } from '@angular/material/button'
 
 import { AppRoutingModule } from '@/app-routing.module'
 import { AppComponent } from '@/app.component'
@@ -12,11 +15,14 @@ import { AppComponent } from '@/app.component'
 import { HeaderComponent } from '@/components/templates/header/header.component'
 import { FooterComponent } from "@/components/templates/footer/footer.component"
 import { NavComponent } from "@/components/templates/nav/nav.component"
+import { ProductCreateComponent } from '@/components/products/product-create/product-create.component'
+
 import { HomeComponent } from '@/views/home/home.component'
 import { ProductCrudComponent } from '@/views/product-crud/product-crud.component'
-import { RedDirective } from './directives/red.directive'
-import { ForDirective } from './directives/for.directive';
-import { ProductCreateComponent } from './components/products/product-create/product-create.component'
+
+import { RedDirective } from '@/directives/red.directive'
+import { ForDirective } from '@/directives/for.directive'
+
 
 @NgModule({
   declarations: [
@@ -37,7 +43,8 @@ import { ProductCreateComponent } from './components/products/product-create/pro
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
