@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 import { ProductServiceService } from '@/components/products/product-service.service'
-import { Product } from '@/components/products/product.protocol'
+import { CreateProductService } from '@/components/products/product.protocol'
 
 @Component({
   selector: 'app-product-create',
@@ -10,7 +10,7 @@ import { Product } from '@/components/products/product.protocol'
 })
 export class ProductCreateComponent implements OnInit {
 
-  product: Product = {
+  product: CreateProductService = {
     name: "",
     price: null
   }
@@ -29,7 +29,7 @@ export class ProductCreateComponent implements OnInit {
   }
 
   handleCreateProduct(): void {
-    this.productService.handleCreateProduct(this.product)
+    this.productService.createProduct(this.product)
       .subscribe(() => {
         this.productService.showMessage("Produto salvo com sucesso!")
 

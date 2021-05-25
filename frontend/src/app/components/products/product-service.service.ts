@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core'
 import { MatSnackBar } from "@angular/material/snack-bar"
 import { HttpClient } from '@angular/common/http'
 
-import { Product } from '@/components/products/product.protocol'
+import { CreateProductService, Product } from '@/components/products/product.protocol'
 
 // SINGLETON
 @Injectable({
@@ -24,7 +24,11 @@ export class ProductServiceService {
     })
   }
 
-  handleCreateProduct(product: Product): Observable<Product> {
+  createProduct(product: CreateProductService): Observable<Product> {
     return this.http.post<Product>(this.baseUrl, product)
+  }
+
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.baseUrl)
   }
 }

@@ -1,5 +1,7 @@
 export type Product = {
-  id?: number
+  id: number
   name: string
   price: number | null
 }
+
+export type CreateProductService = Omit<Product, "id">
