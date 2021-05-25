@@ -8,6 +8,7 @@ import { MatCardModule } from "@angular/material/card"
 import { MatListModule } from "@angular/material/list"
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatButtonModule } from '@angular/material/button'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 import { AppRoutingModule } from '@/app-routing.module'
 import { AppComponent } from '@/app.component'
@@ -15,6 +16,7 @@ import { AppComponent } from '@/app.component'
 import { HeaderComponent } from '@/components/templates/header/header.component'
 import { FooterComponent } from "@/components/templates/footer/footer.component"
 import { NavComponent } from "@/components/templates/nav/nav.component"
+
 import { ProductCreateComponent } from '@/components/products/product-create/product-create.component'
 
 import { HomeComponent } from '@/views/home/home.component'
@@ -22,6 +24,7 @@ import { ProductCrudComponent } from '@/views/product-crud/product-crud.componen
 
 import { RedDirective } from '@/directives/red.directive'
 import { ForDirective } from '@/directives/for.directive'
+
 
 
 @NgModule({
@@ -34,7 +37,7 @@ import { ForDirective } from '@/directives/for.directive'
     ProductCrudComponent,
     RedDirective,
     ForDirective,
-    ProductCreateComponent
+    ProductCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { ForDirective } from '@/directives/for.directive'
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
