@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
-import { ProductServiceService } from '@/components/products/product-service.service'
+import { ProductService } from '@/components/products/product-service.service'
 import { CreateProductService } from '@/components/products/product.protocol'
 
 @Component({
   selector: 'app-product-create',
   templateUrl: './product-create.component.html',
-  styleUrls: ['./product-create.component.css']
+  styleUrls: ['../products.css']
 })
 export class ProductCreateComponent implements OnInit {
 
@@ -16,8 +16,7 @@ export class ProductCreateComponent implements OnInit {
   }
 
   constructor (
-    private productService: ProductServiceService,
-    private router: Router
+    private productService: ProductService
   ) { }
 
   ngOnInit(): void {
@@ -25,10 +24,10 @@ export class ProductCreateComponent implements OnInit {
   }
 
   goToProducts(): void {
-    this.router.navigate(["/products"])
+    this.productService.goToProducts()
   }
 
-  handleCreateProduct(): void {
+  handleProductCreate(): void {
     this.productService.createProduct(this.product)
       .subscribe(() => {
         this.productService.showMessage("Produto salvo com sucesso!")
@@ -36,5 +35,4 @@ export class ProductCreateComponent implements OnInit {
         this.goToProducts()
       })
   }
-
 }
