@@ -29,6 +29,11 @@
       "name": "Outro produto",
       "price": 4568.66,
       "id": 6
+    },
+    {
+      "name": "test",
+      "price": 123,
+      "id": 7
     }
   ]
 }
